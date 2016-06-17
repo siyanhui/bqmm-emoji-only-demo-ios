@@ -46,6 +46,7 @@
             }else {
                 placeholderAttachment.bounds = CGRectMake(0, 0, 60, 60);//固定20X20
             }
+            placeholderAttachment.image = [self placeHolderImage];
             [attrStr appendAttributedString:[NSAttributedString attributedStringWithAttachment:placeholderAttachment]];
         }else if ([obj isKindOfClass:[NSString class]]){
             NSString *capString = (NSString *)obj;
@@ -64,15 +65,15 @@
 }
 
 - (void)setMMText:(NSString *)mmText {
+    [self setMMText:mmText completionHandler:nil];
+}
+
+- (void)setMMText:(NSString*)mmText completionHandler:(void(^)(void))completionHandler {
     NSString *mT = mmText;
     if (mT == nil) {
         mT = @"";
     }
-    [self setMMText:mT completionHandler:nil];
-}
-
-- (void)setMMText:(NSString*)mmText completionHandler:(void(^)(void))completionHandler {
-    MMTextParserModel *model = [[MMTextParserModel alloc] initWithMMText:mmText];
+    MMTextParserModel *model = [[MMTextParserModel alloc] initWithMMText:mT];
     self.model = model;
     [self clearImageViewsCover];
     [self setPlaceholderTextWithMmTextModel:model];
@@ -161,6 +162,19 @@
 }
 
 #pragma mark - private
+
+- (UIImage *)placeHolderImage {
+    static UIImage *holderImage = nil;
+    if (holderImage == nil) {
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(1, 1), NO, 0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, [UIColor colorWithWhite:0.8 alpha:1].CGColor);
+        CGContextFillRect(context, CGRectMake(0, 0, 1, 1));
+        holderImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return holderImage;
+}
 
 - (void)clearImageViewsCover {
     [self.attachmentRanges removeAllObjects];
