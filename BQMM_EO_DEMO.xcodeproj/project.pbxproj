@@ -512,7 +512,7 @@
 				INFOPLIST_FILE = BQMM_EO_DEMO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.siyanhui.BQMM.BQMM-EO-DEMO";
+				PRODUCT_BUNDLE_IDENTIFIER = com.siyanhui.BQMM.EODEMO;
 				PRODUCT_NAME = BQMM_EO_DEMO;
 				PROVISIONING_PROFILE = "";
 			};
@@ -532,7 +532,7 @@
 				INFOPLIST_FILE = BQMM_EO_DEMO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.siyanhui.BQMM.BQMM-EO-DEMO";
+				PRODUCT_BUNDLE_IDENTIFIER = com.siyanhui.BQMM.EODEMO;
 				PRODUCT_NAME = BQMM_EO_DEMO;
 				PROVISIONING_PROFILE = "";
 			};

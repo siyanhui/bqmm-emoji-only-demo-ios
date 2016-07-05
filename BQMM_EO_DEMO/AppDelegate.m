@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[MMEmotionCentre defaultCentre] setAppId:@"15e0710942ec49a29d2224a6af4460ee"
-                                       secret:@"b11e0936a9d04be19300b1d6eec0ccd5"];
+    [[MMEmotionCentre defaultCentre] setAppId:@"your app id"
+                                       secret:@"your app secret"];
     [MMEmotionCentre defaultCentre].sdkMode = MMSDKModeComment;
     
     return YES;
